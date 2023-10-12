@@ -1,1 +1,2 @@
-# tpiuo
+- ime i prezime: Dora Ljubas
+- email: dora.ljubas@fer.hr
