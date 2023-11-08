@@ -2,9 +2,10 @@ name: Docker Image Producer CI
 
 on:
   push:
-    branches: "lab1"
+    branches:
+      - lab1
     paths:
-      - 'procuder/producer.py'
+      - 'producer/producer.py'
  # pull_request:
   #  branches: lab1
     #paths:
