@@ -4,7 +4,7 @@ on:
   push:
     branches: 
       - 'lab1'
-    paths: ['producer/producer.py']
+   # paths: ['producer/producer.py']
  # pull_request:
   #  branches: lab1
     #paths:
