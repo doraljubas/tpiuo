@@ -29,7 +29,7 @@ def send_posts_to_event_hub(posts):
     producer.send_batch(event_data_batch)
 
 
-print("Action works")
+print("Action works?")
 print("Start sending data to event hub")
 top_posts = fetch_top_dataengineering_posts()
 send_posts_to_event_hub(top_posts)
