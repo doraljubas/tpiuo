@@ -42,7 +42,7 @@ jobs:
         run: az acr login --name fervjestinaregistry.azurecr.io
 
       - name: DockerImageBuild
-        run: docker build -t fervjestinaregistry.azurecr.io/producer:latest ./producer
+        run: docker build -t fervjestinaregistry.azurecr.io/producer:latest ../../producer
 
       - name: PushDockerImageToACR
         run: docker push fervjestinaregistry.azurecr.io/producer:latest
