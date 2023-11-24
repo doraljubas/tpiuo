@@ -13,11 +13,14 @@ on:
 jobs:
   editorconfig:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: EditorConfig-Action
-        uses: zbeekman/EditorConfig-Action@v1.1.1
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: EditorConfig Check
+        run: |
+          npx editorconfig-checker
 
   linter:
     runs-on: ubuntu-latest
