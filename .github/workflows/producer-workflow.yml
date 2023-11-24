@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'lab1'
-    paths:
-      - 'producer'
+    #paths:
+    #  - 'producer'
     # pull_request:
     #  branches: lab1
     #paths:
@@ -43,7 +43,7 @@ jobs:
         run: az acr login --name fervjestinaregistry.azurecr.io
 
       - name: DockerImageBuild
-        run: docker build -t fervjestinaregistry.azurecr.io/producer:latest producer
+        run: docker build -t fervjestinaregistry.azurecr.io/producer:latest ../producer
 
       - name: PushDockerImageToACR
         run: docker push fervjestinaregistry.azurecr.io/producer:latest
