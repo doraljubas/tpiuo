@@ -14,4 +14,4 @@ def on_event(partition_context, event):
 
 with client:
     client.receive(on_event=on_event)
-print("DONE")
+print("DONE!")
