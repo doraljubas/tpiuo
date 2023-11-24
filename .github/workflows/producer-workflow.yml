@@ -34,6 +34,9 @@ jobs:
     needs: [ editorconfig,linter ]
 
     steps:
+      - name: Checkout code
+        uses : actions/checkout@v2
+
       - name: AzureLogin
         uses: azure/login@v1
         with:
