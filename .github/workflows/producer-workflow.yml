@@ -48,7 +48,7 @@ jobs:
         run: docker push fervjestinaregistry.azurecr.io/producer:latest
 
       - name: DeployAzureContainerApps
-        uses: azure/container-apps-build-and-deploy@v1
+        uses: azure/container-apps-deploy-action@v1
         with:
           resourceGroup: fervjestina
           containerAppName: producer
