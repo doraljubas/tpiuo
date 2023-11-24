@@ -56,6 +56,5 @@ jobs:
         with:
           resourceGroup: fervjestina
           containerAppName: producer
-          image: fervjestinaregistry.azurecr.io/producer:latest
-          namespace: default
+          imageToDeploy: fervjestinaregistry.azurecr.io/producer:latest
 
