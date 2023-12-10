@@ -12,8 +12,8 @@ EVENTHUB_NAME = "reddit-hub"
 def fetch_top_dataengineering_posts(after):
     url = "https://www.reddit.com/r/dataengineering/top.json"
     params = {
-        "limit": "all",
-        "t": 10,
+        "limit": 10,
+        "t": "all",
         "after": after
     }
     response = requests.get(url, params=params, headers={"User-agent": "fer-lab1"})
@@ -34,6 +34,6 @@ while True:
     posts = fetch_top_dataengineering_posts(after)
     if not posts:
         break
-    send_posts_to_event_hub(posts)
+    #send_posts_to_event_hub(posts)
     after += 10
-    sleep(10)
+    #sleep(10)
