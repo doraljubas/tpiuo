@@ -33,3 +33,5 @@ print("Start sending data to event hub")
 top_posts = fetch_top_dataengineering_posts()
 send_posts_to_event_hub(top_posts)
 print("End sending data to event hub")
+while True:
+    pass
