@@ -16,8 +16,7 @@ def fetch_top_dataengineering_posts(after):
         "t": "all",
         "after": after
     }
-    response = requests.get(url, params=params, headers={"User-agent": "fer-lab1"})
-    return response.json().get("data", {}).get("children", [])
+    return requests.get(url, params=params, headers={"User-agent": "fer-lab1"}).json()
 
 
 def send_posts_to_event_hub(posts):
@@ -29,11 +28,12 @@ def send_posts_to_event_hub(posts):
     producer.send_batch(event_data_batch)
 
 
-after = 0
+after = None
 while True:
-    posts = fetch_top_dataengineering_posts(after)
-    if not posts:
+    response = fetch_top_dataengineering_posts(after)
+    posts = response.get("data", {}).get("children", [])
+    after = response.get("data", {}).get("after", None)
+    if after is None:
         break
-    #send_posts_to_event_hub(posts)
-    after += 10
-    #sleep(10)
+    send_posts_to_event_hub(posts)
+    # sleep(10)
